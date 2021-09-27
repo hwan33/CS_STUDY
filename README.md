@@ -12,8 +12,8 @@
 | 이름   | GitHub                                         |
 | ------ | ---------------------------------------------- |
 | 권용환 | [@yongyongkr](https://github.com/yongyongkr) |
-| 방준석 | [@wnstjr4620](https://github.com/wnstjr4620) |
-| 홍상호 | [@jslkap227](https://github.com/jslkap227) |
+| 방준석 | [@junbangg](https://github.com/junbangg) |
+| 홍상호 | [@ERyukSa](https://github.com/ERyukSa) |
 
 
 # 학습 주제
