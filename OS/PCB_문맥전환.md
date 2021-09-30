@@ -25,7 +25,7 @@
     - running: 실행중인 상태
     - waiting: 이벤트(I/O 완료) 가 일어나기를 기다리는 상태
     - ready: CPU 할당을 기다리는 상태
-    - terminatied: 종료
+    - terminated: 종료
     - 보류 대기 / 보류 준비 상태
 3. Process Number(프로세스 구분자)
     > 운영체제 내에 있는 다양한 프로세스를 구분하기 위한 고유 식별자(pid)를 저장한다.
