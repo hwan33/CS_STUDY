@@ -51,7 +51,7 @@
 10. 부모 프로세스 구분자와 자식 프로세스 구분자
     > Parent Process(부모 프로세스) 를 가리키는 PPID와 Child Process(자식 프로세스)를 가리키는 CPID 정보도 저장된다.
 
-
+# Context Switching(문맥 교환)
 ## 참고
 - 쉽게 배우는 운영체제(Introduction to Operating Systems)
 - https://en.wikipedia.org/wiki/Process_control_block
