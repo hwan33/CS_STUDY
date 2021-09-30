@@ -49,13 +49,13 @@
     > CPU 할당 시간, CPU 사용시간, 프로세스 진행 시간 등을 저장.
     - 예) 작업 관리자에 나오는 CPU, 프로그램 정보
   - 부모 프로세스 구분자와 자식 프로세스 구분자
-    > 
+    > Parent Process(부모 프로세스) 를 가리키는 PPID와 Child Process(자식 프로세스)를 가리키는 CPID 정보도 저장된다.
 
 
 ## 참고
-쉽게 배우는 운영체제(Introduction to Operating Systems)
-https://en.wikipedia.org/wiki/Process_control_block
-https://jhnyang.tistory.com/33
+- 쉽게 배우는 운영체제(Introduction to Operating Systems)
+- https://en.wikipedia.org/wiki/Process_control_block
+- https://jhnyang.tistory.com/33
 
   
 
