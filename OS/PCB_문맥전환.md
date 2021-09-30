@@ -32,18 +32,26 @@
   - Program Counter(프로그램 카운터)
     > 다음에 실행될 명령어의 위치를 가리키는 프로그램 카운터 값을 저장한다.
     - CPU가 하나의 프로세스를 잠시 중단하고, 다른 프로세스를 실행할때, 기존 프로세스가 어디까지 실행됐는지 기억하기 위함.
-  - CPU Scheduling Information (프로세스 우선순위)
-    > 모든 프로세스는 우선순위가 다르게 할당 되어있다.
-    
+  - CPU Scheduling Information (프로세스 우선순위, 스케쥴링 포인터)
+    > 모든 프로세스는 우선순위가 다르게 할당 되어있기 때문에, 스케쥴링을 위해 PCB에 저장한다.
+    - 에를 들어, 사용자 프로세스보다 커널 프로세스가 우선순위가 높고, 사용자 프로세스끼리도 우선순위가 다를 수 있다.
   - 각종 레지스터 정보
+    > CPU가 프로세스간의 전환을 할때, 기존 CPU의 상태(CPU 레지스터의 정보)를 저장하는 곳.
+    * CPU레지스터란?: CPU 가 동작 하기위해서 필요한 정보를 저장하는 곳.
   - 메모리 관리 정보
+    > 프로세스가 메모리의 어디에 있는지 나타내는 메모리 위치 정보.
+    - 메모리 보호를 위해 사용하는 [경계 레지스터(Boundary register)](https://wordrow.kr/%EC%9D%98%EB%AF%B8/%EA%B2%BD%EA%B3%84%20%EB%A0%88%EC%A7%80%EC%8A%A4%ED%84%B0/)값 등이 저장된다.
+    - 세그멘테이션 테이블(Segmentation Table)과 페이지 테이블(Page Table) 등의 정보도 저장한다.
   - 할당된 자원 정보
+    > 프로세스를 
   - 계정 정보
   - 부모 프로세스 구분자와 자식 프로세스 구분자
 
 
 ## 참고
-
+쉽게 배우는 운영체제(Introduction to Operating Systems)
+https://en.wikipedia.org/wiki/Process_control_block
+https://jhnyang.tistory.com/33
 
   
 
