@@ -41,7 +41,7 @@
 
 패킷 내용
 
-<img width="603" alt="Screen Shot 2021-10-07 at 11 52 31 PM" src="https://user-images.githubusercontent.com/33091784/136409779-40e892ab-c56f-4f90-91e1-0e8ac83ec761.png">
+<img width="603" alt="Screen Shot 2021-10-07 at 11 57 18 PM" src="https://user-images.githubusercontent.com/33091784/136410496-fc76294a-4b5d-40e3-8f8b-f944fb5f83b1.png">
 
   - A 클라이언트는 B 서버에게 **ACK**를 보내고, 그 후부터 연결이 이루어지고 데이터 전송이 시작된다.
   - 이때 B의 상태는 **Established**이다.
