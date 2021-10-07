@@ -9,22 +9,15 @@
 ### 3 Way Handshake/4 Way Handshake 의 패킷 구성
 
 <img width="604" alt="Screen Shot 2021-10-08 at 12 24 56 AM" src="https://user-images.githubusercontent.com/33091784/136415319-69114d0a-23d7-43ab-b510-b8da7ea8a8cf.png">
+
   - **URG**: URGENT 포인터란 전송하는 데이터 중에서 긴급히 전달해야 할 내용이 있을 경우에 사용한다. 긴급한 데이터는 다른 데이터에 비해 우선순위가 높아야한다.
    EX) ping 명령어 실행 도중 Ctrl+c 입력
   - **ACK**: ACKNOWLEDGEMENT의 약자로, 상대방으로부터 패킷을 받았다는 걸 알려주는 패킷, 다른 플래그와 같이 출력되는 경우도 있습니다.
 받는 사람이 보낸 사람 시퀀스 번호에 TCP 계층에서 길이 또는 데이터 양을 더한 것과 같은 ACK를 보냅니다.(일반적으로 +1 하여 보냄) ACK 응답을 통해 보낸 패킷에 대한 성공, 실패를 판단하여 재전송 하거나 다음 패킷을 전송한다.
   - **PSH**: PUSH 란, 밀어넣기, ELNET 과 같은 상호작용이 중요한 프로토콜의 경우 빠른 응답이 중요한데, 이 때 받은 데이터를 즉시 목적지인 OSI 7 Layer 의 Application 계층으로 전송하도록 하는 FLAG. 대화형 트랙픽에 사용되는 것으로 버퍼가 채워지기를 기다리지 않고 데이터를 전달한다. 데이터는 버퍼링 없이 바로 위 계층이 아닌 7 계층의 응용프로그램으로 바로 전달한다.
   - **RST**: RESET란, 재설정(Reset)을 하는 과정이며 양방향에서 동시에 일어나는 중단 작업이다. 비 정상적인 세션 연결 끊기에 해당한다. 이 패킷을 보내는 곳이 현재 접속하고 있는 곳과 즉시 연결을 끊고자 할 때 사용한다.
-  - **SYN**: 
-
-출처: https://mindgear.tistory.com/206 [정리]
-
-출처: https://mindgear.tistory.com/206 [정리]
-
-출처: https://mindgear.tistory.com/206 [정리]
-
-출처: https://mindgear.tistory.com/206 [정리]
-
+  - **SYN**: TCP 에서 세션을 성립할 때  가장먼저 보내는 패킷, 시퀀스 번호를 임의적으로 설정하여 세션을 연결하는 데에 사용되며 초기에 시퀀스 번호를 보내게 된다.
+  - **FIN**: 세션 연결을 종료시킬 때 사용되며 더이상 전송할 데이터가 없음을 나타낸다.
 
 ### 3 Way Handshake는 한 문장으로
   > TCP는 장치/프로그램들 사이에 접속 세션을 성립하기 위해 3 Way Handhshake를 사용한다.
@@ -57,7 +50,6 @@
 패킷 내용
 
 <img width="603" alt="Screen Shot 2021-10-07 at 11 52 08 PM" src="https://user-images.githubusercontent.com/33091784/136409740-be8c0f54-f1ef-45a2-ba5a-b0171629292d.png">
-
 
 ### Step 3
 
@@ -119,6 +111,3 @@
 - https://bangu4.tistory.com/74
 - https://kyunghwa-yoo.github.io/tcp-ip-네트워크-스택-이해하기-요약
 - https://mindgear.tistory.com/206
-  
-
-
