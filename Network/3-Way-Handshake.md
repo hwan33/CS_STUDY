@@ -18,6 +18,7 @@
 <img width="623" alt="Screen Shot 2021-10-07 at 11 21 05 PM" src="https://user-images.githubusercontent.com/33091784/136404085-9bad914c-4619-4a8b-ade1-809d383c8b8d.png">
 
 ### Step 1
+
 패킷 내용
 
 <img width="603" alt="Screen Shot 2021-10-07 at 11 51 28 PM" src="https://user-images.githubusercontent.com/33091784/136409627-9a272256-c972-41b7-a779-83f6e60a7741.png">
