@@ -61,13 +61,13 @@
 - Stop and Wait를 보완한 방법
 - 수신자가 설정한 window size만큼은 전송자가 응답 여부에 상관없이 패킷을 연속적으로 보낼 수있다.
    
-> 💡 **Window)** 모든 Application program은 통신하기 위해 socket을 열고, 이곳에 임시 저장 공간인 send(송신) buffer와 receive(수신) buffer를 생성한다. **Window는 이 buffer를 의미한다.** <br><br>
+> 💡 **Window)** 모든 Application program은 통신을 하기 위해 socket을 열고, 이곳에 **임시 저장 공간**인 send(송신) buffer와 receive(수신) buffer를 생성한다. **Window는 이 buffer를 의미한다.** <br><br>
     - **send buffer:** 소켓에서 내려온 데이터를 전송하고 ACK을 받기 전까지 저장하는 공간<br>
     - **receive buffer:** 패킷을 순서대로 위 계층으로 올려보내기 위해, 먼저 들어온 패킷을 저장하는 공간
 
 <br>
 
-#### Sliding Window 동작 방식)
+#### Sliding Window의 동작 방식)
 전송자는 세그먼트를 보내고 ACK을 받으면 window를 옆으로 옮기면서(해당 세그먼트를 전송 buffer에서 폐기) 다음 세그먼트를 전송한다. 
 
 ![253F7E485715ED5F27](https://user-images.githubusercontent.com/48471292/136476039-046cd068-c91c-4b4e-9f76-2d09bdd8a2db.png)
@@ -131,7 +131,7 @@ Window 내 패킷을 모두 성공적으로 전송했으면 window size를 1 증
 
 <br>
 
-### 2) Slow Start(느린 시작)
+#### 2) Slow Start(느린 시작)
 AIMD를 개선한 것으로, 패킷들을 모두 성공적으로 보냈을 때 **패킷 개수만큼** window size를 증가시키며, 혼잡 상황이 발생했을 때는 window size를 1로 감소시킨다.
 
 <br>
