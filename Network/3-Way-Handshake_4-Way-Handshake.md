@@ -5,7 +5,7 @@
   - TCP/IP는 **신뢰성**과 **정확성**을 가장 우선으로 한다.
   - 이러한 **신뢰성**과 **정확성**을 보장하기위해, 연결에 대한 논리적인 약속을 설립한다.
 
-### 3 Way Handshake/4 Way Handshake 의 패킷 구성
+### 3 Way Handshake/4 Way Handshake 의 Flag 구성
 
 <img width="604" alt="Screen Shot 2021-10-08 at 12 24 56 AM" src="https://user-images.githubusercontent.com/33091784/136415319-69114d0a-23d7-43ab-b510-b8da7ea8a8cf.png">
 
@@ -37,7 +37,7 @@
   - A 클라이언트는 **SYN/ACK**를 기다리는 **SYN_SENT** 상태
   - B 서버는 **Wait for Client** 상태
 
-패킷 내용
+Flag 내용
 
 <img width="603" alt="Screen Shot 2021-10-07 at 11 51 28 PM" src="https://user-images.githubusercontent.com/33091784/136409627-9a272256-c972-41b7-a779-83f6e60a7741.png">
 
@@ -46,7 +46,7 @@
   - B 서버는 **SYN** 요청을 받고 A 클라이언트에게 <요청을 수락한다는 **ACK** 와 **SYN** flag> 로 구성된 패킷을 발송하고,
  **ACK** 응답을 기다리며 B서버는 **SYN_RECEIVED** 상태가 된다.
  
-패킷 내용
+Flag 내용
 
 <img width="603" alt="Screen Shot 2021-10-07 at 11 52 08 PM" src="https://user-images.githubusercontent.com/33091784/136409740-be8c0f54-f1ef-45a2-ba5a-b0171629292d.png">
 
@@ -55,7 +55,7 @@
   - A 클라이언트는 B 서버에게 **ACK**를 보내고, 그 후부터 연결이 이루어지고 데이터 전송이 시작된다.
   - 이때 B의 상태는 **Established**이다.
 
-패킷 내용
+Flag 내용
 
 <img width="603" alt="Screen Shot 2021-10-07 at 11 57 18 PM" src="https://user-images.githubusercontent.com/33091784/136410496-fc76294a-4b5d-40e3-8f8b-f944fb5f83b1.png">
 
@@ -75,7 +75,7 @@
   - A 클라이언트가 연결을 종료하겠다는 **FIN** 플래그를 B 서버에게 전송한다
   - 이때, A 클라이언트는 **FIN_WAIT** 상태가 된다.
   
-  패킷 내용
+  Flag 내용
   
   <img width="603" alt="Screen Shot 2021-10-08 at 12 08 51 AM" src="https://user-images.githubusercontent.com/33091784/136412703-9320be5c-4a6b-401c-be3e-9f228f38fd14.png">
 
@@ -84,7 +84,7 @@
   - 일단 확인 응답 **ACK** 를 보내고 자신의 통신이 끝날때까지 기다리는데 
   - 이때 B 서버의 상태는 CLOSE_WAIT 상태이다.
   
-  패킷 내용
+  Flag 내용
   
   <img width="603" alt="Screen Shot 2021-10-08 at 12 15 24 AM" src="https://user-images.githubusercontent.com/33091784/136413742-1939a957-de8a-4726-a50d-b0890b66df20.png">
 
@@ -92,7 +92,7 @@
   - 연결을 종료하기 위해, 연결해지를 위한 준비가 되었음을 알리기 위해 A 클라이언트에게 **FIN** 플래그를 전송한다.
   - 이때 B의 상태는 **LAST_ACK** 이다
   
-  패킷 내용
+  Flag 내용
   
   <img width="603" alt="Screen Shot 2021-10-08 at 12 08 51 AM" src="https://user-images.githubusercontent.com/33091784/136412703-9320be5c-4a6b-401c-be3e-9f228f38fd14.png">
   
@@ -100,9 +100,13 @@
   - 클라이언트는 해지 준비가 되었다는 **ACK** 를 보낸다.
   - 이때 A 클라이언트의 상태가 **FIN_WAIT** 에서 **TIME_WAIT** 으로 변경된다.
   
-  패킷 내용
+  Flag 내용
   
   <img width="603" alt="Screen Shot 2021-10-08 at 12 15 24 AM" src="https://user-images.githubusercontent.com/33091784/136413742-1939a957-de8a-4726-a50d-b0890b66df20.png">
+  
+# TCP State Cycle
+![Screen Shot 2021-10-09 at 9 17 42 PM](https://user-images.githubusercontent.com/33091784/136657536-c162b5b5-375a-4405-b41e-0d86e43a7f8a.png)
+
 
 ## 참고
 - 모두의 네트워크<미즈구치 크츠야>
@@ -110,3 +114,4 @@
 - https://bangu4.tistory.com/74
 - https://kyunghwa-yoo.github.io/tcp-ip-네트워크-스택-이해하기-요약
 - https://mindgear.tistory.com/206
+- https://eminentstar.tistory.com/71
