@@ -8,7 +8,9 @@
 - linux 에서 모든 소켓 통신은 기본적으로B**locking Model 으로 동작.**
 - **I/O** 작업이 진행되는 동안 유저 프로세스는 자신의 작업을 중단한 채 대기하는 방식.
 
-<img width="655" alt="Screen Shot 2021-10-20 at 9 32 40 PM" src="https://user-images.githubusercontent.com/33091784/138099313-5c82147c-464f-4b37-9ff2-f488b3c4fc24.png">
+<img width="655" alt="Screen Shot 2021-10-20 at 9 27 49 PM" src="https://user-images.githubusercontent.com/33091784/138099328-768dbc53-cef4-4819-8b8d-989467a763c8.png">
+
+
 
 
 1. 유저는 커널에게 read 작업을 요청
@@ -22,7 +24,7 @@
 - 위의 **Blocking Model** 의 비효율성을 해결하기 위해 도입된 방식.
     - I/O 작업이 진행되는 동안 유저 프로세스의 작업을 중단시키지 않는 방식
 
-<img width="655" alt="Screen Shot 2021-10-20 at 9 27 49 PM" src="https://user-images.githubusercontent.com/33091784/138099328-768dbc53-cef4-4819-8b8d-989467a763c8.png">
+<img width="655" alt="Screen Shot 2021-10-20 at 9 32 40 PM" src="https://user-images.githubusercontent.com/33091784/138099313-5c82147c-464f-4b37-9ff2-f488b3c4fc24.png">
 
 
 1. 유저가 커널에게 read 작업을 요청
