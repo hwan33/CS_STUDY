@@ -69,8 +69,13 @@
 
 ## Blocking & Synchronous
 
-- 호출되는 함수가 바로 리턴하지 않고, 호출하는 함수는 작업 완료 여부를 신경쓴다.
-- **Blocking** 이면 어차피 호출된 함수가 결과 반환할때까지 아무것도 못한다.
+<img width="626" alt="Screen Shot 2021-10-20 at 10 51 07 PM" src="https://user-images.githubusercontent.com/33091784/138106139-2db2d5b7-653f-42b2-919d-0ec3e295c67a.png">
+
+- 프로그램이 Blocking을 일으키는 시스템 함수를 호출
+- 한 작업당 한 번의 사용자-커널 사이의 문맥교환 발생
+- 정지된 프로그램은 CPU를 사용하지 않고 커널의 응답을 대기
+- 프로그램 관점에서 보면 마치 처리 로직이 오래걸리는것 같지만, 사실은 커널의 일을 기다리느라 Block 되어 있는 것.
+
 - 예시
     
     나 : 핫 황금올리브 치킨 한마리 주세요
@@ -85,9 +90,9 @@
     
 
 ## Blocking & Asynchronous
+- 이점이 없어서 사용되는 경우가 없는것 같다.
+- 원래는 Non-Blocking & Aync 를 추가하다가 Block-Async가 되어 버리는 경우가 있다고 한다.
 
-- 호출되는 함수가 바로 리턴하지 않고, 호출하는 함수는 작업 완료 여부를 신경쓰지 않는 것.
-- 위와 마찬가지로 **Blocking** 이면 어차피 호출된 함수가 결과 반환할때까지 아무것도 못한다.
 - 예시
     
     나 : 핫 황금올리브 치킨 한마리 주세요
@@ -103,8 +108,13 @@
 
 ## Non-Blocking & Synchronous
 
-- 호출되는 함수는 바로 리턴하고, 호출하는 함수는 작업 완료 여부를 신경쓰는 것
+<img width="626" alt="Screen Shot 2021-10-20 at 10 53 46 PM" src="https://user-images.githubusercontent.com/33091784/138106611-676a157c-5e9e-4715-b156-42b5edce0de7.png">
+
+
 - Non-Blocking 함수를 호출하고 바로 반환 받아서 다른 작업을 할 수 있게 되지만, 함수 호출에 의해 수행되는 작업이 완료된 것은 아니고, 호출하는 메서드가 호출되는 함수 쪽에 작업 완료 여부를 계속 문의하는 것이다.
+- Blocking & Synchronous 의 개선안이지만 비효율적이다.
+    - 왜냐하면 Non-Blocking 방식은 정상 데이터가 올때까지 계속 시스템콜을 하며 문맥교환을 한다.
+    - Latency를 초래
 - 예시
     
     나 : 핫 황금올리브 치킨 한마리 주세요
@@ -130,7 +140,14 @@
 
 ## Non-Blocking & Asynchronous
 
-- 호출되는 함수는 바로 리턴하고, 호출하는 함수는 작업 완료 여부를 신경쓰지 않는 것.
+<img width="626" alt="Screen Shot 2021-10-20 at 10 55 27 PM" src="https://user-images.githubusercontent.com/33091784/138106887-2606a66d-0a87-4fd2-b575-08ce7928a007.png">
+
+
+- 시스템콜이 즉시 IO개시 여부를 반환.
+- 사용자 프로세스는 다른일을 할 수 있고, CPU는 다른 업무를 볼 수 있다.
+- IO는 백그라운드에서 처리된다.
+- IO 응답이 도착하면 신호나 콜백으로 IO 전달을 완료한다.
+
 - 예시
     
     나 : 핫 황금올리브 치킨 한마리 주세요
@@ -167,3 +184,7 @@
 [https://ju3un.github.io/network-basic-1/](https://ju3un.github.io/network-basic-1/)
 
 [https://ju3un.github.io/network-basic-2/](https://ju3un.github.io/network-basic-2/)
+
+https://sjh836.tistory.com/109
+
+https://ozt88.tistory.com/20
