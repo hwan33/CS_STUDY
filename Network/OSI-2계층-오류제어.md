@@ -35,22 +35,22 @@
 <img width="643" alt="Screen Shot 2021-11-05 at 8 10 31 PM" src="https://user-images.githubusercontent.com/33091784/140501902-e9688f9f-3662-493e-9956-2e0f66a9440d.png">
 
 ### Go-Back-N ARQ
+- Protocol Pipelining 개념
+- Sender는 첫 프레임에 대한 ACK를 받기 전까지 여러개의 Frame를 보낼 수 있다
+- 정해진 개수의 Frame를 순차적으로 보낸다
+- 윈도우 사이즈에 따라 프레임의 순번이 정해진다
+- 특정 Frame 에 대한 ACK를 정해진 시간안에 못받으면, 현재 슬라이딩 윈도우 안에 있는 모든 Frame는 재전송된다.
+- Go-Back-N 에서 `N` 은 윈도우의 사이즈를 의미한다.
 
-![IMG_0766](https://user-images.githubusercontent.com/33091784/140503094-dee299c6-45e0-496d-b2af-bd60e18cddad.jpg)
-- 이 상태에서 Sender는 다음 Frame인 4를 보낸다
-- 그리고 Sliding Window는 왼쪽으로 이동한다
+![IMG_0770](https://user-images.githubusercontent.com/33091784/140504786-6ace1fa4-64d3-467f-9bd1-df6a066ff653.jpg)
 
-![IMG_0767](https://user-images.githubusercontent.com/33091784/140503379-1ca1cd9d-5637-4c74-a826-ba00a9d18926.jpg)
-1. 여기서 Frame 1를 Acknowledge 한다
-2. 그 다음 Frame 인 5를 보낸다
-3. Sliding Window 가 왼쪽으로 이동한다
-4. 만약 ACK를 시간안에 못 받으면 Retransmit
-
-![IMG_0768](https://user-images.githubusercontent.com/33091784/140503625-28a8832f-0aaf-42f3-9f16-f2d66f5fdf78.jpg)
-1. 2 ACK를 Timeout 전에 전달받지 못했기 때문에 2~5까지 전부 다시 전송한다(Current Window)
-
-![IMG_0769](https://user-images.githubusercontent.com/33091784/140503797-bc7bef05-27f1-4d0e-b133-aab6c6ec5f93.jpg)
-1. 4, 5는 버려진다
+### Selective ARQ
+- 수신자는 제대로 받은(오류가 없는)모든 패킷에 대한 ACK를 보낸다
+- 즉, 오류가 발생한 프레임만 재전송된다.
+- 송신자는 못 받은 ACK에 대한 패킷만 재전송한다.
+- Sender window: 연속된 N개의 seq number
+	
+![IMG_0771](https://user-images.githubusercontent.com/33091784/140505278-d3acee3f-4541-4595-9eed-e852d2d1e23b.jpg)
 
 # 참고
 
