@@ -38,11 +38,25 @@
 
 ![IMG_0766](https://user-images.githubusercontent.com/33091784/140503094-dee299c6-45e0-496d-b2af-bd60e18cddad.jpg)
 - 이 상태에서 Sender는 다음 Frame인 4를 보낸다
-- 그리고 Sliding Window는 왼쪽으로 
-참고
+- 그리고 Sliding Window는 왼쪽으로 이동한다
+
+![IMG_0767](https://user-images.githubusercontent.com/33091784/140503379-1ca1cd9d-5637-4c74-a826-ba00a9d18926.jpg)
+1. 여기서 Frame 1를 Acknowledge 한다
+2. 그 다음 Frame 인 5를 보낸다
+3. Sliding Window 가 왼쪽으로 이동한다
+4. 만약 ACK를 시간안에 못 받으면 Retransmit
+
+![IMG_0768](https://user-images.githubusercontent.com/33091784/140503625-28a8832f-0aaf-42f3-9f16-f2d66f5fdf78.jpg)
+1. 2 ACK를 Timeout 전에 전달받지 못했기 때문에 2~5까지 전부 다시 전송한다(Current Window)
+
+![IMG_0769](https://user-images.githubusercontent.com/33091784/140503797-bc7bef05-27f1-4d0e-b133-aab6c6ec5f93.jpg)
+1. 4, 5는 버려진다
+
+# 참고
 
 [http://mystudyroom.net/2021/01/07/문-osi참조모델-2계층에서의-오류제어방식에-대하여-설/](http://mystudyroom.net/2021/01/07/%EB%AC%B8-osi%EC%B0%B8%EC%A1%B0%EB%AA%A8%EB%8D%B8-2%EA%B3%84%EC%B8%B5%EC%97%90%EC%84%9C%EC%9D%98-%EC%98%A4%EB%A5%98%EC%A0%9C%EC%96%B4%EB%B0%A9%EC%8B%9D%EC%97%90-%EB%8C%80%ED%95%98%EC%97%AC-%EC%84%A4/)
 
 [http://www.ktword.co.kr/test/view/view.php?m_temp1=693](http://www.ktword.co.kr/test/view/view.php?m_temp1=693)
 
 [http://blog.skby.net/bec-backward-error-correction/](http://blog.skby.net/bec-backward-error-correction/)
+
